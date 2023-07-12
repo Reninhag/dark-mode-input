@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@100;200;300;400;500;600&family=Roboto:ital,wght@0,400;0,500;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: "Open Sans";
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #dddddd;
+    transition: 0.5s;
+}
+
+.darkMode {
+    background-color: #222;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    height: 400px;
+    width: 400px;
+    border-radius: 12px;
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.05);
+    transition: 0.5s;
+}
+
+.darkMode .content{
+    background-color: #292929;
+}
+
+.action {
+    display: flex;
+    justify-content: action;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    color: #000;
+}
+
+.action input {
+    appearance: none;
+}
+
+.action input:checked ~ i {
+    background-color: #192948;
+    background-image: url(./assets/estrelas.png);
+    background-size: cover;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.action input:checked ~ i::before{
+    background-color: #9085af;
+    background-image: url(./assets/lua.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 2px 3px rgba(255, 255, 255, 0.1);
+}
+
+.action i{
+    position: relative;
+    width: 60px;
+    height: 28px;
+    background-image: url(./assets/ceu.jpg);
+    background-size: cover;
+    background-color: #2aa0ff;
+    border-radius: 15px;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+}
+
+.action i::before{
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background: linear-gradient(#ffd900, #ff9100);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+}
+
+.action input:checked ~ i::before {
+    left: calc(100% - 25px);
+}
